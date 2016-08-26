@@ -37,7 +37,7 @@ public class ThirdPersonMovement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (Controller.collisionFlags);
+		//Debug.Log (Controller.collisionFlags);
 
 		GetInputs ();
 		moveDirection = Vector3.zero;
