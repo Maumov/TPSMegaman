@@ -55,8 +55,7 @@ public class Shooting : MonoBehaviour {
 	void Shoot(){
 		if(fire1){
 			GameObject bullet = (GameObject)Instantiate (Bullet,transform.position + (direction * 2f),transform.rotation);
-			bullet.transform.localScale *= ((int)LoadBullet +1f) * 0.5f;
-			bullet.GetComponent<Bullet>().StartTravel(direction,damage * ((int)LoadBullet + 1f));	
+			bullet.GetComponent<Bullet>().StartTravel(direction,damage,(int)(LoadBullet +1f));	
 			LoadBullet = 0f;
 		}
 

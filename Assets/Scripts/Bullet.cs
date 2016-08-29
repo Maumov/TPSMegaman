@@ -19,18 +19,14 @@ public class Bullet : MonoBehaviour {
 		
 		if(start){
 			transform.position += direction * Speed * Time.deltaTime;
-			lifeTime -= Time.deltaTime;
-			if(lifeTime <= 0f){
-				
-				Destroy (gameObject);
-			}
 		}
 
 	}
-	public void StartTravel(Vector3 dir, float dmg){
-		damage = dmg;
+	public void StartTravel(Vector3 dir, float dmg, int timeLoaded){
+		damage = dmg * (int)timeLoaded;
 		direction = dir;
 		lifeTime = 30f;
+		Destroy(gameObject,lifeTime);
 		start = true;
 
 	}

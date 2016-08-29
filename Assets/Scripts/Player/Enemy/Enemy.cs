@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour, IStats {
 	}
 	public void Damage(float val){
 		HealthPoints -= val;
-		Debug.Log ("received damage");
+		Debug.Log ("received damage: "+val);
 	}
 	public void Die(){
 		Destroy (gameObject);
