@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour {
 	public Vector3 direction;
 	public float Speed = 1f;
 	bool start;
-	float damage;
+	public float damage;
 	float lifeTime;
 	// Use this for initialization
 	void Start () {
@@ -22,8 +22,7 @@ public class Bullet : MonoBehaviour {
 		}
 
 	}
-	public void StartTravel(Vector3 dir, float dmg, int timeLoaded){
-		damage = dmg * (int)timeLoaded;
+	public void StartTravel(Vector3 dir){
 		direction = dir;
 		lifeTime = 30f;
 		Destroy(gameObject,lifeTime);

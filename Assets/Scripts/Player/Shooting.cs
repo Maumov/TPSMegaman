@@ -1,19 +1,33 @@
 ﻿using UnityEngine;
-using System.Collections;
-
+using UnityEngine.UI;
 public class Shooting : MonoBehaviour {
+	[Header ("Info")]
 	public float damage;
+
 	Ray ray;
 	Vector3 direction;
 	GameObject endPoint,target;
 	RaycastHit hit;
 	float mouseX,mouseY,fire2;
 	public GameObject PositionOfHit;
-	public GameObject Bullet;
+	public GameObject[] bullets;
 	bool fire1;
 	//Charge Bullet
-	public float LoadBullet = 0f;
+	[Header ("Charge")]
+	public float chargingThreshold = 0.25f;
+	public float chargingTime = 0f;
 	public LayerMask mask;
+
+	//UI
+	[Header ("UI")]
+	public Text uICharged;
+
+	//UI Target
+	[Header ("Target UI")]
+	public GameObject targetUI;
+	public Text targetName;
+	public Text targetHP;
+
 	// Use this for initialization
 	void Start () {
 		ray = new Ray ();
@@ -25,13 +39,13 @@ public class Shooting : MonoBehaviour {
 		GetInputs ();
 		Aim ();
 		Shoot ();
+		UpdateUI();
 	}
 	void GetInputs(){
 		
 		mouseX = Input.GetAxisRaw("Mouse X");
 		mouseY = Input.GetAxisRaw("Mouse Y");
-		LoadBullet += Input.GetAxisRaw("Fire1") * Time.deltaTime;
-		LoadBullet = Mathf.Clamp (LoadBullet, 0f, 2f);
+		chargingTime += Input.GetAxisRaw("Fire1") * Time.deltaTime;
 		fire1 = Input.GetButtonUp("Fire1");
 		fire2 = Input.GetAxisRaw("Fire2");
 
@@ -46,19 +60,36 @@ public class Shooting : MonoBehaviour {
 		if (Physics.Raycast (ray.origin,ray.direction, out hit,100f,mask)) {
 			PositionOfHit.SetActive (true);
 			PositionOfHit.transform.position = hit.point;
+			if(hit.collider.GetComponent<IStats>() != null){
+				ShowTargetStatus(hit.collider.GetComponent<IStats>());
+			}
 		} else {
-			PositionOfHit.SetActive (false);
+			ResetTargetStatus();
+			PositionOfHit.transform.position = ray.origin + (ray.direction * 10f);
 		}
 
 	}
 
 	void Shoot(){
 		if(fire1){
-			GameObject bullet = (GameObject)Instantiate (Bullet,transform.position + (direction * 2f),transform.rotation);
-			bullet.GetComponent<Bullet>().StartTravel(direction,damage,(int)(LoadBullet +1f));	
-			LoadBullet = 0f;
+			chargingTime = (int)(chargingTime / chargingThreshold);
+			GameObject bullet = (GameObject)Instantiate (bullets[(int)(Mathf.Clamp(chargingTime,0,bullets.Length-1f))],transform.position + (direction * 2f),transform.rotation);
+			bullet.GetComponent<Bullet>().StartTravel(direction);	
+			chargingTime = 0f;
 		}
 
 	}
-
+	void ShowTargetStatus(IStats targetStats){
+		targetUI.SetActive(true);
+		targetName.text = targetStats.Name;
+		targetHP.text = targetStats.HealthPoints.ToString();
+	}
+	void ResetTargetStatus(){
+		targetUI.SetActive(false);
+		targetName.text = "";
+		targetHP.text = "";
+	}
+	void UpdateUI(){
+		uICharged.text = ((int)(Mathf.Clamp(chargingTime / chargingThreshold,0,bullets.Length-1f))).ToString();
+	}
 }

@@ -1,9 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.UI;
 public class Player : MonoBehaviour ,IStats{
-	public GameObject Camera;
 
+	//Camera
+	public GameObject Camera;
+	//UI
+	//public Text nameUI;
+	public Text hpUI;
+
+	//IStats
+	string name;
+	public string Name{
+		get{ 
+			return name;
+		}
+		set{ 
+			name = value;
+
+		}
+	}
 	float healthPoints = 100f;
 	public float HealthPoints{
 		get{ 
@@ -17,8 +33,10 @@ public class Player : MonoBehaviour ,IStats{
 		}
 	}
 
+
 	// Use this for initialization
 	void Start () {
+		Name = PlayerPrefs.GetString("Player Name","Player1");
 		Camera.transform.SetParent(null);
 	}
 
@@ -28,9 +46,12 @@ public class Player : MonoBehaviour ,IStats{
 	}
 	public void Damage(float val){
 		HealthPoints -= val;
+		hpUI.text = HealthPoints.ToString();
 		Debug.Log ("received damage");
 	}
 	public void Die(){
 		Debug.Log ("Player died");
 	}
+
+
 }

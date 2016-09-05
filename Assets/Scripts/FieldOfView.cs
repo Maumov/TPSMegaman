@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class FieldOfView : MonoBehaviour {
-
+	public bool showFieldOfView;
 	public float viewRadius;
 	[Range(0,360)]
 	public float viewAngle;
@@ -11,7 +11,7 @@ public class FieldOfView : MonoBehaviour {
 	public LayerMask targetMask;
 	public LayerMask obstacleMask;
 
-	[HideInInspector]
+	//[HideInInspector]
 	public List<Transform> visibleTargets = new List<Transform>();
 
 	public float meshResolution;
@@ -38,7 +38,13 @@ public class FieldOfView : MonoBehaviour {
 	}
 
 	void LateUpdate() {
-		DrawFieldOfView ();
+		if(showFieldOfView){
+			viewMeshFilter.gameObject.SetActive(true);
+			DrawFieldOfView ();	
+		}else{
+			viewMeshFilter.gameObject.SetActive(false);
+		}
+
 	}
 
 	void FindVisibleTargets() {

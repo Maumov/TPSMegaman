@@ -2,6 +2,10 @@
 using System.Collections;
 
 public interface IStats{
+	string Name {
+		get;
+		set;
+	}
 	float HealthPoints {
 		get;
 		set;
