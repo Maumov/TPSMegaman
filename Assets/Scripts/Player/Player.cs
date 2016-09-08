@@ -26,7 +26,7 @@ public class Player : IStats{
 		hpUI.text = HealthPoints.ToString();
 	}
 	public override void Die(){
-		Debug.Log ("Player died");
+		//Debug.Log ("Player died");
 	}
 
 

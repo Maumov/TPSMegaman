@@ -50,11 +50,11 @@ public class EnemyMovement : MonoBehaviour {
 			attack.Attack();
 			if(!attack.isAttacking){
 				if(!agent.hasPath){
-					currentTargetPoint++;
 					if(currentTargetPoint >= points.Length){
 						currentTargetPoint = 0;	
 					}
 					agent.SetDestination(points[currentTargetPoint]);	
+					currentTargetPoint++;
 				}	
 
 			}

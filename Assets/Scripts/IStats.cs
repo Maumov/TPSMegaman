@@ -29,7 +29,7 @@ public abstract class IStats : MonoBehaviour{
 
 	public virtual void Damage (float val){
 		HealthPoints -= val;
-		Debug.Log ("received damage: "+val);
+		//Debug.Log ("received damage: "+val);
 		if(HealthPoints <= 0){
 			Die();
 		}

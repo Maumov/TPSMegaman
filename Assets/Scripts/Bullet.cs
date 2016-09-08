@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour {
 	Vector3 direction;
 	public float Speed = 1f;
 
-	public ParticleSystem Nulled, Hit, Death;
+	public GameObject Nulled, Hit, Death;
 
 	bool start;
 	public float damage;
@@ -36,14 +36,14 @@ public class Bullet : MonoBehaviour {
 		if(other.GetComponent <IStats>() != null)
 		{
 			other.GetComponent <IStats> ().Damage (damage);
-			Instantiate(Hit,transform.position,Quaternion.identity);
+			Destroy (((GameObject)Instantiate(Hit,transform.position,Quaternion.identity)).gameObject, 5f);
 		}else{
-			Instantiate(Nulled,transform.position,Quaternion.identity);
+			Destroy (((GameObject)Instantiate(Nulled,transform.position,Quaternion.identity)).gameObject, 5f);
 		}
 		Destroy (gameObject);
 	}
 	void DeathTimeReached(){
-		Instantiate(Death,transform.position,Quaternion.identity);
+		Destroy (((GameObject)Instantiate(Death,transform.position,Quaternion.identity)).gameObject, 5f);
 		Destroy (gameObject);
 	}
 
