@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\Crosshair.cs" />
      <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyAttack.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\FieldOfView.cs" />
      <Compile Include="Assets\Scripts\IStats.cs" />
      <Compile Include="Assets\Scripts\LevelCreator\LevelLoader.cs" />

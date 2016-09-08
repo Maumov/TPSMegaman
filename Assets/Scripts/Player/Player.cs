@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-public class Player : MonoBehaviour ,IStats{
+public class Player : IStats{
 
 	//Camera
 	public GameObject Camera;
@@ -9,29 +9,6 @@ public class Player : MonoBehaviour ,IStats{
 	//public Text nameUI;
 	public Text hpUI;
 
-	//IStats
-	string name;
-	public string Name{
-		get{ 
-			return name;
-		}
-		set{ 
-			name = value;
-
-		}
-	}
-	float healthPoints = 100f;
-	public float HealthPoints{
-		get{ 
-			return healthPoints;
-		}
-		set{ 
-			healthPoints = value;
-			if(healthPoints <= 0f){
-				Die ();
-			}
-		}
-	}
 
 
 	// Use this for initialization
@@ -44,12 +21,11 @@ public class Player : MonoBehaviour ,IStats{
 	void Update () {
 
 	}
-	public void Damage(float val){
-		HealthPoints -= val;
+	public override void Damage(float val){
+		base.Damage(val);
 		hpUI.text = HealthPoints.ToString();
-		Debug.Log ("received damage");
 	}
-	public void Die(){
+	public override void Die(){
 		Debug.Log ("Player died");
 	}
 

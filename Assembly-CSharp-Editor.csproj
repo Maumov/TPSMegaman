@@ -47,7 +47,6 @@
   <ItemGroup>
      <Compile Include="Assets\Editor\EnemyEditor.cs" />
      <Compile Include="Assets\Editor\FieldOfViewEditor.cs" />
-     <Compile Include="Assets\Editor\PlayerEditor.cs" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>

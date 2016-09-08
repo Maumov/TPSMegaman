@@ -4,11 +4,14 @@ using UnityEditor;
 using System.Runtime.Remoting.Lifetime;
 
 public class Bullet : MonoBehaviour {
-	public Vector3 direction;
+	Vector3 direction;
 	public float Speed = 1f;
+
+	public ParticleSystem Nulled, Hit, Death;
+
 	bool start;
 	public float damage;
-	float lifeTime;
+	public float lifeTime = 30f;
 	// Use this for initialization
 	void Start () {
 		
@@ -24,8 +27,8 @@ public class Bullet : MonoBehaviour {
 	}
 	public void StartTravel(Vector3 dir){
 		direction = dir;
-		lifeTime = 30f;
-		Destroy(gameObject,lifeTime);
+		//Destroy(gameObject,lifeTime);
+		Invoke("DeathTimeReached",lifeTime);
 		start = true;
 
 	}
@@ -33,7 +36,15 @@ public class Bullet : MonoBehaviour {
 		if(other.GetComponent <IStats>() != null)
 		{
 			other.GetComponent <IStats> ().Damage (damage);
+			Instantiate(Hit,transform.position,Quaternion.identity);
+		}else{
+			Instantiate(Nulled,transform.position,Quaternion.identity);
 		}
 		Destroy (gameObject);
 	}
+	void DeathTimeReached(){
+		Instantiate(Death,transform.position,Quaternion.identity);
+		Destroy (gameObject);
+	}
+
 }

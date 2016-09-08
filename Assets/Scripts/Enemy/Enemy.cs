@@ -1,32 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Enemy : MonoBehaviour, IStats {
+public class Enemy : IStats {
 	public ParticleSystem DeathEffect;
 
-	string name;
-	public string Name{
-		get{ 
-			return name;
-		}
-		set{ 
-			name = value;
-
-		}
-	}
-
-	float healthPoints;
-	public float HealthPoints{
-		get{ 
-			return healthPoints;
-		}
-		set{ 
-			healthPoints = value;
-			if(healthPoints <= 0f){
-				Die ();
-			}
-		}
-	}
 
 	// Use this for initialization
 	void Start () {
@@ -37,12 +14,12 @@ public class Enemy : MonoBehaviour, IStats {
 	void Update () {
 	
 	}
-	public void Damage(float val){
-		HealthPoints -= val;
-		Debug.Log ("received damage: "+val);
+	public override void Damage(float val){
+		
+		base.Damage(val);
 	}
-	public void Die(){
+	public override void Die(){
 		Instantiate(DeathEffect,transform.position,Quaternion.identity);
-		Destroy (gameObject);
+		base.Die();
 	}
 }

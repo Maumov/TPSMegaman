@@ -2,15 +2,11 @@
 using System.Collections;
 using UnityEditor;
 
-[CustomEditor (typeof(Enemy))]
+[CustomEditor (typeof(IStats))]
 public class EnemyEditor : Editor {
-	public override void OnInspectorGUI(){
-		DrawDefaultInspector();
-		Enemy e = (Enemy)target;
-		EditorGUILayout.BeginVertical();
-		e.Name = EditorGUILayout.TextField("Name", "Dummy");
-		e.HealthPoints = EditorGUILayout.FloatField("HP",10f);
-		EditorGUILayout.EndVertical();
 
+	public override void OnInspectorGUI(){
+		Enemy s = (Enemy)target;
+		s.Name = EditorGUILayout.TextField("Name",s.Name);
 	}
 }
