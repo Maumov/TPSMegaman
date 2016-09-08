@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+[RequireComponent (typeof(EnemyMovement))]
+[RequireComponent (typeof(NavMeshAgent))]
 public class EnemyAttack : MonoBehaviour {
+	public enum EnemyType{Chaser, Turret, None}
+	public EnemyType enemyType;
 	[Header ("Weapon")]
 	public GameObject bullet;
 
@@ -12,10 +15,11 @@ public class EnemyAttack : MonoBehaviour {
 
 	Transform target;
 	Vector3 returnPosition;
+	EnemyMovement enemyMovement;
 	FieldOfView fov;
 	NavMeshAgent agent;
 	Vector3 targetLastSeen;
-	public GameObject asd;
+
 	// Use this for initialization
 	void Start () {
 		nextShot = Time.time;
@@ -28,7 +32,7 @@ public class EnemyAttack : MonoBehaviour {
 	}
 	bool hasTarget(){
 		if(fov == null){
-			fov = GetComponent<FieldOfView>();
+			fov = enemyMovement.fov;
 		}
 		return fov.visibleTargets.Count > 0;
 	}
@@ -55,7 +59,12 @@ public class EnemyAttack : MonoBehaviour {
 				Shoot();	
 			}else{
 				//LOS lost from target, Proceed to search for target at last seen position.
-				yield return StartCoroutine (SearchTargetAtLastSeenPosition (targetLastSeen));
+				if(enemyType.Equals(EnemyType.Chaser)){
+					yield return StartCoroutine (SearchTargetAtLastSeenPosition (targetLastSeen));	
+				}
+				if(enemyType.Equals(EnemyType.Turret)){
+					target = null;
+				}
 			}
 			yield return null;
 		}
@@ -91,22 +100,24 @@ public class EnemyAttack : MonoBehaviour {
 		Debug.Log ("Start SearchTargetAtLastSeenPosition");
 		agent.ResetPath ();
 		agent.SetDestination(pos);
-		asd.transform.position = pos;
-		while(agent.pathPending){
+		while(agent.pathPending || !agent.hasPath){
 			yield return null;
 		}
 		agent.Resume ();
 		bool targetFound = false;
+		Debug.Log(agent.hasPath);
 		while(!targetFound && agent.hasPath){
 			if(hasTarget ()){
 				targetFound  = true;
 				target = fov.visibleTargets[0];
 				targetLastSeen = target.transform.position;
+				Debug.Log("Target found");
 			}
 			yield return null;
 		}
 
 		if(!targetFound){
+			Debug.Log("No Target found");
 			target = null;
 			StartCoroutine(BackToPosition());
 		}

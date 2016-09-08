@@ -7,6 +7,7 @@ public class FieldOfView : MonoBehaviour {
 	public float viewRadius;
 	[Range(0,360)]
 	public float viewAngle;
+	public Vector3 offset;
 
 	public LayerMask targetMask;
 	public LayerMask obstacleMask;
@@ -50,7 +51,6 @@ public class FieldOfView : MonoBehaviour {
 	void FindVisibleTargets() {
 		visibleTargets.Clear ();
 		Collider[] targetsInViewRadius = Physics.OverlapSphere (transform.position, viewRadius, targetMask);
-
 		for (int i = 0; i < targetsInViewRadius.Length; i++) {
 			Transform target = targetsInViewRadius [i].transform;
 			Vector3 dirToTarget = (target.position - transform.position).normalized;

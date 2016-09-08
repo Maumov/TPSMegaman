@@ -36,14 +36,14 @@ public class Bullet : MonoBehaviour {
 		if(other.GetComponent <IStats>() != null)
 		{
 			other.GetComponent <IStats> ().Damage (damage);
-			Destroy (((GameObject)Instantiate(Hit,transform.position,Quaternion.identity)).gameObject, 5f);
+			Destroy (((GameObject)Instantiate(Hit,transform.position,Quaternion.identity)).gameObject, Hit.GetComponent<ParticleSystem>().duration);
 		}else{
-			Destroy (((GameObject)Instantiate(Nulled,transform.position,Quaternion.identity)).gameObject, 5f);
+			Destroy (((GameObject)Instantiate(Nulled,transform.position,Quaternion.identity)).gameObject, Nulled.GetComponent<ParticleSystem>().duration);
 		}
 		Destroy (gameObject);
 	}
 	void DeathTimeReached(){
-		Destroy (((GameObject)Instantiate(Death,transform.position,Quaternion.identity)).gameObject, 5f);
+		Destroy (((GameObject)Instantiate(Death,transform.position,Quaternion.identity)).gameObject, Death.GetComponent<ParticleSystem>().duration);
 		Destroy (gameObject);
 	}
 

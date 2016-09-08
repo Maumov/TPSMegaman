@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Enemy : IStats {
-	public ParticleSystem DeathEffect;
+	public GameObject DeathEffect;
 
 
 	// Use this for initialization
@@ -19,7 +19,7 @@ public class Enemy : IStats {
 		base.Damage(val);
 	}
 	public override void Die(){
-		Instantiate(DeathEffect,transform.position,Quaternion.identity);
+		Destroy (((GameObject)Instantiate(DeathEffect,transform.position,Quaternion.identity)).gameObject, DeathEffect.GetComponent<ParticleSystem>().duration);
 		base.Die();
 	}
 }

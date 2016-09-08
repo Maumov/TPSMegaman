@@ -74,8 +74,8 @@ public class Pressed : MonoBehaviour {
 			yield return null;
 			RectTransform rt = go.GetComponent<RectTransform>();
 			yield return null;
-			UnityEngine.UI.AspectRatioFitter arf = rt.gameObject.GetComponent<UnityEngine.UI.AspectRatioFitter>();
-			yield return null;
+//			UnityEngine.UI.AspectRatioFitter arf = rt.gameObject.GetComponent<UnityEngine.UI.AspectRatioFitter>();
+//			yield return null;
 			scenariosHolder.GetComponent<UnityEngine.UI.VerticalLayoutGroup>().spacing = rt.rect.height;
 			yield return null;
 		}

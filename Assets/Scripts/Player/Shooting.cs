@@ -8,7 +8,9 @@ public class Shooting : MonoBehaviour {
 	Vector3 direction;
 	GameObject endPoint,target;
 	RaycastHit hit;
-	float mouseX,mouseY,fire2;
+	float mouseX;
+	float mouseY;
+	float fire2;
 	public GameObject PositionOfHit;
 	public GameObject[] bullets;
 	bool fire1;
