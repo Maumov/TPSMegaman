@@ -5,7 +5,7 @@ public class PlayerUI : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		transform.parent = null;
+		transform.SetParent (null);
 	}
 	
 	// Update is called once per frame

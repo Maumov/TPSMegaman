@@ -15,6 +15,8 @@ public class LevelLoader : MonoBehaviour {
 	public string levels = "Worlds";
 	public ColorToPrefab[] colorToPrefab;
 
+	public float Tallest, Shortest; 
+	public GameObject MapSlot;
 	// Use this for initialization
 	void Start () {
 		LoadDirectory();
@@ -70,18 +72,18 @@ public class LevelLoader : MonoBehaviour {
 		}
 
 		//find the right color 
-
+		float height = (Mathf.Floor (y / 2f) * Tallest + Mathf.Ceil (y / 2f) * Shortest);
 		//TODO: Should be a dictionary to lookup the prefab
 		foreach(ColorToPrefab ctp in colorToPrefab){
 			if(ctp.color.Equals(c)){
 			//if(ctp.color.r == c.r && ctp.color.g == c.g  && ctp.color.b == c.b && ctp.color.a == c.a ){
 				//Spawn the prefab at the right location
-				GameObject go  = (GameObject)Instantiate(ctp.prefab, new Vector3(x , y , z), Quaternion.identity);
-				go.transform.parent = transform;
+				GameObject go  = (GameObject)Instantiate(ctp.prefab, new Vector3(x , height , z), Quaternion.identity);
+				go.transform.parent = MapSlot.transform;
 				return;
 			}
 		}
-		Debug.LogError("No color to prefab found for: " + c.ToString() + " ,Position :"+x+","+y+","+z+".");
+		Debug.LogError("No color to prefab found for: " + c.ToString() + " ,Position :"+x+","+height+","+z+".");
 
 	}
 	public static string[] GetScenarios(){
