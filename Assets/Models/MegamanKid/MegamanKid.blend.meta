@@ -75,21 +75,22 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'Walk' has import animation warnings that might
+    animationImportWarnings: "\nClip 'Default Take' has import animation warnings
+      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'UpperLeg_L' has scale animation that will
+      be discarded.\n\t'Foot_L' has scale animation that will be discarded.\n\t'UpperLeg_R'
+      has scale animation that will be discarded.\n\t'Foot_R' has scale animation
+      that will be discarded.\n\nClip 'Jump' has import animation warnings that might
       lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
-      retargeting quality.\n\t'Foot_L' has scale animation that will be discarded.\n\t'Foot_R'
+      retargeting quality.\n\t'UpperLeg_L' has scale animation that will be discarded.\n\t'Foot_L'
+      has scale animation that will be discarded.\n\t'UpperLeg_R' has scale animation
+      that will be discarded.\n\t'Foot_R' has scale animation that will be discarded.\n\nClip
+      'Run' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'UpperLeg_L'
+      has scale animation that will be discarded.\n\t'Foot_L' has scale animation
+      that will be discarded.\n\t'UpperLeg_R' has scale animation that will be discarded.\n\t'Foot_R'
       has scale animation that will be discarded.\n"
-    animationRetargetingWarnings: "\nRetargeting quality report for clip 'Default
-      Take':\n\tRightLowerArm average position error 6.7 mm and maximum position error
-      15.2 mm at time 0:-1 (0.0%) Frame -1\n\tRightHand average position error 0.6
-      mm and maximum position error 1.6 mm at time 0:-1 (0.0%) Frame -1\n\nRetargeting
-      quality report for clip 'Idle':\n\tRightLowerArm average position error 6.7
-      mm and maximum position error 15.2 mm at time 0:-1 (0.0%) Frame -1\n\tRightHand
-      average position error 0.6 mm and maximum position error 1.6 mm at time 0:-1
-      (0.0%) Frame -1\n\nRetargeting quality report for clip 'Walk':\n\tRightLowerArm
-      average position error 6.7 mm and maximum position error 15.2 mm at time 0:-1
-      (0.0%) Frame -1\n\tRightHand average position error 0.6 mm and maximum position
-      error 1.6 mm at time 0:-1 (0.0%) Frame -1\n"
+    animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 3
     animationRotationError: 0.5
@@ -102,7 +103,7 @@ ModelImporter:
       name: Default Take
       takeName: Default Take
       firstFrame: 0
-      lastFrame: 19.92
+      lastFrame: 38.88
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -115,9 +116,9 @@ ModelImporter:
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 1
-      keepOriginalPositionY: 1
+      keepOriginalPositionY: 0
       keepOriginalPositionXZ: 0
-      heightFromFeet: 0
+      heightFromFeet: 1
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
@@ -183,8 +184,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Idle
       takeName: Idle
-      firstFrame: -1
-      lastFrame: 19.92
+      firstFrame: 0
+      lastFrame: 39.84
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

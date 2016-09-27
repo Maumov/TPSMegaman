@@ -100,6 +100,11 @@ ModelImporter:
     7400006: Armature|Idle
     7400008: Armature|T_Pose
     7400010: Armature|Walk
+    7400012: Armature|Jump
+    7400014: Armature|Run
+    7400016: Armature|Shoot
+    7400018: Armature|Falling
+    7400020: Armature|Landing
     9500000: //RootNode
     13700000: Model
   materials:
@@ -122,7 +127,819 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|Idle
+      takeName: Armature|Idle
+      firstFrame: 0
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0.05
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 1
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/FootController.L
+        weight: 0
+      - path: Armature/FootController.L/LegIK.L
+        weight: 0
+      - path: Armature/FootController.L/LegIK.L/LegIK.L_end
+        weight: 0
+      - path: Armature/FootController.R
+        weight: 0
+      - path: Armature/FootController.R/LegIK.R
+        weight: 0
+      - path: Armature/FootController.R/LegIK.R/LegIK.R_end
+        weight: 0
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/ArmIK.L
+        weight: 0
+      - path: Armature/Root/ArmIK.L/ArmIK.L_end
+        weight: 0
+      - path: Armature/Root/ArmIK.R
+        weight: 0
+      - path: Armature/Root/ArmIK.R/ArmIK.R_end
+        weight: 0
+      - path: Armature/Root/ArmPoleTarget.L
+        weight: 0
+      - path: Armature/Root/ArmPoleTarget.L/ArmPoleTarget.L_end
+        weight: 0
+      - path: Armature/Root/ArmPoleTarget.R
+        weight: 0
+      - path: Armature/Root/ArmPoleTarget.R/ArmPoleTarget.R_end
+        weight: 0
+      - path: Armature/Root/LegTarget.L
+        weight: 0
+      - path: Armature/Root/LegTarget.L/LegTarget.L_end
+        weight: 0
+      - path: Armature/Root/LegTarget.R
+        weight: 0
+      - path: Armature/Root/LegTarget.R/LegTarget.R_end
+        weight: 0
+      - path: Armature/Root/Pelvis
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/Neck
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/Neck/Head
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/Neck/Head/Head_end
+        weight: 0
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.L
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.L/LowerArm.L
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.L/LowerArm.L/Hand.L
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.L/LowerArm.L/Hand.L/Hand.L_end
+        weight: 0
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.R
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.R/LowerArm.R
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.R/LowerArm.R/Hand.R
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.R/LowerArm.R/Hand.R/Hand.R_end
+        weight: 0
+      - path: Armature/Root/Pelvis/UpperLeg.L
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.L/LowerLeg.L
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.L/LowerLeg.L/Foot.L
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.L/LowerLeg.L/Foot.L/Foot.L_end
+        weight: 0
+      - path: Armature/Root/Pelvis/UpperLeg.R
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.R/LowerLeg.R
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.R/LowerLeg.R/Foot.R
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.R/LowerLeg.R/Foot.R/Foot.R_end
+        weight: 0
+      - path: Model
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Jump
+      takeName: Armature|Jump
+      firstFrame: 3
+      lastFrame: 6
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/FootController.L
+        weight: 0
+      - path: Armature/FootController.L/LegIK.L
+        weight: 0
+      - path: Armature/FootController.L/LegIK.L/LegIK.L_end
+        weight: 0
+      - path: Armature/FootController.R
+        weight: 0
+      - path: Armature/FootController.R/LegIK.R
+        weight: 0
+      - path: Armature/FootController.R/LegIK.R/LegIK.R_end
+        weight: 0
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/ArmIK.L
+        weight: 0
+      - path: Armature/Root/ArmIK.L/ArmIK.L_end
+        weight: 0
+      - path: Armature/Root/ArmIK.R
+        weight: 0
+      - path: Armature/Root/ArmIK.R/ArmIK.R_end
+        weight: 0
+      - path: Armature/Root/ArmPoleTarget.L
+        weight: 0
+      - path: Armature/Root/ArmPoleTarget.L/ArmPoleTarget.L_end
+        weight: 0
+      - path: Armature/Root/ArmPoleTarget.R
+        weight: 0
+      - path: Armature/Root/ArmPoleTarget.R/ArmPoleTarget.R_end
+        weight: 0
+      - path: Armature/Root/LegTarget.L
+        weight: 0
+      - path: Armature/Root/LegTarget.L/LegTarget.L_end
+        weight: 0
+      - path: Armature/Root/LegTarget.R
+        weight: 0
+      - path: Armature/Root/LegTarget.R/LegTarget.R_end
+        weight: 0
+      - path: Armature/Root/Pelvis
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/Neck
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/Neck/Head
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/Neck/Head/Head_end
+        weight: 0
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.L
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.L/LowerArm.L
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.L/LowerArm.L/Hand.L
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.L/LowerArm.L/Hand.L/Hand.L_end
+        weight: 0
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.R
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.R/LowerArm.R
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.R/LowerArm.R/Hand.R
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.R/LowerArm.R/Hand.R/Hand.R_end
+        weight: 0
+      - path: Armature/Root/Pelvis/UpperLeg.L
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.L/LowerLeg.L
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.L/LowerLeg.L/Foot.L
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.L/LowerLeg.L/Foot.L/Foot.L_end
+        weight: 0
+      - path: Armature/Root/Pelvis/UpperLeg.R
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.R/LowerLeg.R
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.R/LowerLeg.R/Foot.R
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.R/LowerLeg.R/Foot.R/Foot.R_end
+        weight: 0
+      - path: Model
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Run
+      takeName: Armature|Run
+      firstFrame: 0
+      lastFrame: 18
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/FootController.L
+        weight: 0
+      - path: Armature/FootController.L/LegIK.L
+        weight: 0
+      - path: Armature/FootController.L/LegIK.L/LegIK.L_end
+        weight: 0
+      - path: Armature/FootController.R
+        weight: 0
+      - path: Armature/FootController.R/LegIK.R
+        weight: 0
+      - path: Armature/FootController.R/LegIK.R/LegIK.R_end
+        weight: 0
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/ArmIK.L
+        weight: 0
+      - path: Armature/Root/ArmIK.L/ArmIK.L_end
+        weight: 0
+      - path: Armature/Root/ArmIK.R
+        weight: 0
+      - path: Armature/Root/ArmIK.R/ArmIK.R_end
+        weight: 0
+      - path: Armature/Root/ArmPoleTarget.L
+        weight: 0
+      - path: Armature/Root/ArmPoleTarget.L/ArmPoleTarget.L_end
+        weight: 0
+      - path: Armature/Root/ArmPoleTarget.R
+        weight: 0
+      - path: Armature/Root/ArmPoleTarget.R/ArmPoleTarget.R_end
+        weight: 0
+      - path: Armature/Root/LegTarget.L
+        weight: 0
+      - path: Armature/Root/LegTarget.L/LegTarget.L_end
+        weight: 0
+      - path: Armature/Root/LegTarget.R
+        weight: 0
+      - path: Armature/Root/LegTarget.R/LegTarget.R_end
+        weight: 0
+      - path: Armature/Root/Pelvis
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/Neck
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/Neck/Head
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/Neck/Head/Head_end
+        weight: 0
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.L
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.L/LowerArm.L
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.L/LowerArm.L/Hand.L
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.L/LowerArm.L/Hand.L/Hand.L_end
+        weight: 0
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.R
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.R/LowerArm.R
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.R/LowerArm.R/Hand.R
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.R/LowerArm.R/Hand.R/Hand.R_end
+        weight: 0
+      - path: Armature/Root/Pelvis/UpperLeg.L
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.L/LowerLeg.L
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.L/LowerLeg.L/Foot.L
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.L/LowerLeg.L/Foot.L/Foot.L_end
+        weight: 0
+      - path: Armature/Root/Pelvis/UpperLeg.R
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.R/LowerLeg.R
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.R/LowerLeg.R/Foot.R
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.R/LowerLeg.R/Foot.R/Foot.R_end
+        weight: 0
+      - path: Model
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Shoot
+      takeName: Armature|Shoot
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 1
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/FootController.L
+        weight: 0
+      - path: Armature/FootController.L/LegIK.L
+        weight: 0
+      - path: Armature/FootController.L/LegIK.L/LegIK.L_end
+        weight: 0
+      - path: Armature/FootController.R
+        weight: 0
+      - path: Armature/FootController.R/LegIK.R
+        weight: 0
+      - path: Armature/FootController.R/LegIK.R/LegIK.R_end
+        weight: 0
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/ArmIK.L
+        weight: 0
+      - path: Armature/Root/ArmIK.L/ArmIK.L_end
+        weight: 0
+      - path: Armature/Root/ArmIK.R
+        weight: 0
+      - path: Armature/Root/ArmIK.R/ArmIK.R_end
+        weight: 0
+      - path: Armature/Root/ArmPoleTarget.L
+        weight: 0
+      - path: Armature/Root/ArmPoleTarget.L/ArmPoleTarget.L_end
+        weight: 0
+      - path: Armature/Root/ArmPoleTarget.R
+        weight: 0
+      - path: Armature/Root/ArmPoleTarget.R/ArmPoleTarget.R_end
+        weight: 0
+      - path: Armature/Root/LegTarget.L
+        weight: 0
+      - path: Armature/Root/LegTarget.L/LegTarget.L_end
+        weight: 0
+      - path: Armature/Root/LegTarget.R
+        weight: 0
+      - path: Armature/Root/LegTarget.R/LegTarget.R_end
+        weight: 0
+      - path: Armature/Root/Pelvis
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/Neck
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/Neck/Head
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/Neck/Head/Head_end
+        weight: 0
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.L
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.L/LowerArm.L
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.L/LowerArm.L/Hand.L
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.L/LowerArm.L/Hand.L/Hand.L_end
+        weight: 0
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.R
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.R/LowerArm.R
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.R/LowerArm.R/Hand.R
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.R/LowerArm.R/Hand.R/Hand.R_end
+        weight: 0
+      - path: Armature/Root/Pelvis/UpperLeg.L
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.L/LowerLeg.L
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.L/LowerLeg.L/Foot.L
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.L/LowerLeg.L/Foot.L/Foot.L_end
+        weight: 0
+      - path: Armature/Root/Pelvis/UpperLeg.R
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.R/LowerLeg.R
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.R/LowerLeg.R/Foot.R
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.R/LowerLeg.R/Foot.R/Foot.R_end
+        weight: 0
+      - path: Model
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|T_Pose
+      takeName: Armature|T_Pose
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/FootController.L
+        weight: 0
+      - path: Armature/FootController.L/LegIK.L
+        weight: 0
+      - path: Armature/FootController.L/LegIK.L/LegIK.L_end
+        weight: 0
+      - path: Armature/FootController.R
+        weight: 0
+      - path: Armature/FootController.R/LegIK.R
+        weight: 0
+      - path: Armature/FootController.R/LegIK.R/LegIK.R_end
+        weight: 0
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/ArmIK.L
+        weight: 0
+      - path: Armature/Root/ArmIK.L/ArmIK.L_end
+        weight: 0
+      - path: Armature/Root/ArmIK.R
+        weight: 0
+      - path: Armature/Root/ArmIK.R/ArmIK.R_end
+        weight: 0
+      - path: Armature/Root/ArmPoleTarget.L
+        weight: 0
+      - path: Armature/Root/ArmPoleTarget.L/ArmPoleTarget.L_end
+        weight: 0
+      - path: Armature/Root/ArmPoleTarget.R
+        weight: 0
+      - path: Armature/Root/ArmPoleTarget.R/ArmPoleTarget.R_end
+        weight: 0
+      - path: Armature/Root/LegTarget.L
+        weight: 0
+      - path: Armature/Root/LegTarget.L/LegTarget.L_end
+        weight: 0
+      - path: Armature/Root/LegTarget.R
+        weight: 0
+      - path: Armature/Root/LegTarget.R/LegTarget.R_end
+        weight: 0
+      - path: Armature/Root/Pelvis
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/Neck
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/Neck/Head
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/Neck/Head/Head_end
+        weight: 0
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.L
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.L/LowerArm.L
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.L/LowerArm.L/Hand.L
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.L/LowerArm.L/Hand.L/Hand.L_end
+        weight: 0
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.R
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.R/LowerArm.R
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.R/LowerArm.R/Hand.R
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.R/LowerArm.R/Hand.R/Hand.R_end
+        weight: 0
+      - path: Armature/Root/Pelvis/UpperLeg.L
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.L/LowerLeg.L
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.L/LowerLeg.L/Foot.L
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.L/LowerLeg.L/Foot.L/Foot.L_end
+        weight: 0
+      - path: Armature/Root/Pelvis/UpperLeg.R
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.R/LowerLeg.R
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.R/LowerLeg.R/Foot.R
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.R/LowerLeg.R/Foot.R/Foot.R_end
+        weight: 0
+      - path: Model
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Falling
+      takeName: Armature|Jump
+      firstFrame: 40
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 1
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/FootController.L
+        weight: 0
+      - path: Armature/FootController.L/LegIK.L
+        weight: 0
+      - path: Armature/FootController.L/LegIK.L/LegIK.L_end
+        weight: 0
+      - path: Armature/FootController.R
+        weight: 0
+      - path: Armature/FootController.R/LegIK.R
+        weight: 0
+      - path: Armature/FootController.R/LegIK.R/LegIK.R_end
+        weight: 0
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/ArmIK.L
+        weight: 0
+      - path: Armature/Root/ArmIK.L/ArmIK.L_end
+        weight: 0
+      - path: Armature/Root/ArmIK.R
+        weight: 0
+      - path: Armature/Root/ArmIK.R/ArmIK.R_end
+        weight: 0
+      - path: Armature/Root/ArmPoleTarget.L
+        weight: 0
+      - path: Armature/Root/ArmPoleTarget.L/ArmPoleTarget.L_end
+        weight: 0
+      - path: Armature/Root/ArmPoleTarget.R
+        weight: 0
+      - path: Armature/Root/ArmPoleTarget.R/ArmPoleTarget.R_end
+        weight: 0
+      - path: Armature/Root/LegTarget.L
+        weight: 0
+      - path: Armature/Root/LegTarget.L/LegTarget.L_end
+        weight: 0
+      - path: Armature/Root/LegTarget.R
+        weight: 0
+      - path: Armature/Root/LegTarget.R/LegTarget.R_end
+        weight: 0
+      - path: Armature/Root/Pelvis
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/Neck
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/Neck/Head
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/Neck/Head/Head_end
+        weight: 0
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.L
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.L/LowerArm.L
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.L/LowerArm.L/Hand.L
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.L/LowerArm.L/Hand.L/Hand.L_end
+        weight: 0
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.R
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.R/LowerArm.R
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.R/LowerArm.R/Hand.R
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.R/LowerArm.R/Hand.R/Hand.R_end
+        weight: 0
+      - path: Armature/Root/Pelvis/UpperLeg.L
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.L/LowerLeg.L
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.L/LowerLeg.L/Foot.L
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.L/LowerLeg.L/Foot.L/Foot.L_end
+        weight: 0
+      - path: Armature/Root/Pelvis/UpperLeg.R
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.R/LowerLeg.R
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.R/LowerLeg.R/Foot.R
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.R/LowerLeg.R/Foot.R/Foot.R_end
+        weight: 0
+      - path: Model
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Landing
+      takeName: Armature|Jump
+      firstFrame: 80
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 1
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/FootController.L
+        weight: 0
+      - path: Armature/FootController.L/LegIK.L
+        weight: 0
+      - path: Armature/FootController.L/LegIK.L/LegIK.L_end
+        weight: 0
+      - path: Armature/FootController.R
+        weight: 0
+      - path: Armature/FootController.R/LegIK.R
+        weight: 0
+      - path: Armature/FootController.R/LegIK.R/LegIK.R_end
+        weight: 0
+      - path: Armature/Root
+        weight: 1
+      - path: Armature/Root/ArmIK.L
+        weight: 0
+      - path: Armature/Root/ArmIK.L/ArmIK.L_end
+        weight: 0
+      - path: Armature/Root/ArmIK.R
+        weight: 0
+      - path: Armature/Root/ArmIK.R/ArmIK.R_end
+        weight: 0
+      - path: Armature/Root/ArmPoleTarget.L
+        weight: 0
+      - path: Armature/Root/ArmPoleTarget.L/ArmPoleTarget.L_end
+        weight: 0
+      - path: Armature/Root/ArmPoleTarget.R
+        weight: 0
+      - path: Armature/Root/ArmPoleTarget.R/ArmPoleTarget.R_end
+        weight: 0
+      - path: Armature/Root/LegTarget.L
+        weight: 0
+      - path: Armature/Root/LegTarget.L/LegTarget.L_end
+        weight: 0
+      - path: Armature/Root/LegTarget.R
+        weight: 0
+      - path: Armature/Root/LegTarget.R/LegTarget.R_end
+        weight: 0
+      - path: Armature/Root/Pelvis
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/Neck
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/Neck/Head
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/Neck/Head/Head_end
+        weight: 0
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.L
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.L/LowerArm.L
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.L/LowerArm.L/Hand.L
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.L/LowerArm.L/Hand.L/Hand.L_end
+        weight: 0
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.R
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.R/LowerArm.R
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.R/LowerArm.R/Hand.R
+        weight: 1
+      - path: Armature/Root/Pelvis/Abdomen/Torso/UpperArm.R/LowerArm.R/Hand.R/Hand.R_end
+        weight: 0
+      - path: Armature/Root/Pelvis/UpperLeg.L
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.L/LowerLeg.L
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.L/LowerLeg.L/Foot.L
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.L/LowerLeg.L/Foot.L/Foot.L_end
+        weight: 0
+      - path: Armature/Root/Pelvis/UpperLeg.R
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.R/LowerLeg.R
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.R/LowerLeg.R/Foot.R
+        weight: 1
+      - path: Armature/Root/Pelvis/UpperLeg.R/LowerLeg.R/Foot.R/Foot.R_end
+        weight: 0
+      - path: Model
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
