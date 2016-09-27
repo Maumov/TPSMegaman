@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class ThirdPersonMovement : MonoBehaviour {
 	//Character Configuration
@@ -21,7 +22,8 @@ public class ThirdPersonMovement : MonoBehaviour {
 	//Inputs
 	float vertical;
 	float horizontal;
-	float mouseX,mouseY,fire1,fire2;
+	float mouseX,mouseY,fire2;
+	bool fire1;
 	bool jump;
 	//Private fields
 	CharacterController Controller;
@@ -29,9 +31,14 @@ public class ThirdPersonMovement : MonoBehaviour {
 	Vector3 jumpDirection;
 	Ray wallCollisionRay;
 	RaycastHit hit;
+	Animator anim;
+	bool landing;
+
+
 	// Use this for initialization
 	void Start () {
 		Controller = GetComponent<CharacterController>();
+		anim = GetComponentInChildren <Animator> ();
 
 	}
 
@@ -49,6 +56,8 @@ public class ThirdPersonMovement : MonoBehaviour {
 		Jump();
 		Gravity ();
 
+		//Apply Animations
+		SetAnimatorValues ();
 
 		//Apply movements
 		transform.Rotate(0f,mouseX,0f);
@@ -57,6 +66,7 @@ public class ThirdPersonMovement : MonoBehaviour {
 		//Camera Rotations
 		cameraPivot.transform.Rotate (-mouseY,0f,0f);
 
+
 	}
 
 	void GetInputs(){
@@ -64,7 +74,7 @@ public class ThirdPersonMovement : MonoBehaviour {
 		horizontal = Input.GetAxisRaw("Horizontal");
 		mouseX = Input.GetAxisRaw("Mouse X");
 		mouseY = Input.GetAxisRaw("Mouse Y");
-		fire1 = Input.GetAxisRaw("Fire1");
+		fire1 = Input.GetMouseButtonUp (0);
 		fire2 = Input.GetAxisRaw("Fire2");
 		jump = Input.GetButtonDown ("Jump");
 	}
@@ -76,6 +86,7 @@ public class ThirdPersonMovement : MonoBehaviour {
 	}
 	void Jump(){
 		if (jump && Controller.isGrounded) {
+			
 			jumping = true;
 			currentJumpSpeed = jumpSpeed;
 		} 
@@ -131,4 +142,42 @@ public class ThirdPersonMovement : MonoBehaviour {
 			return false;
 		}
 	}
+	void SetAnimatorValues(){
+		
+		anim.SetBool ("Run",vertical > 0f ? true : false );
+		if (jumping && Controller.isGrounded) {
+			landing = true;
+			anim.ResetTrigger ("Landed");
+			anim.SetTrigger ("Jump");
+
+		}
+
+		if(Controller.velocity.y < 0f){
+			if(!anim.GetCurrentAnimatorStateInfo (0).IsName ("Falling")){
+				anim.SetTrigger ("Falling");	
+			}
+
+		}else if(Controller.velocity.y == 0f){
+			if(anim.GetCurrentAnimatorStateInfo (0).IsName ("Falling")){
+				anim.SetTrigger ("Landed");	
+			}
+		}
+		/*
+		if (Controller.velocity.y == 0f && moveDirection.y < 0f && !anim.IsInTransition (0) && anim.GetCurrentAnimatorStateInfo (0).IsName ("Falling") && landing) {
+			Debug.Log ("landed");
+			landing = false;
+			anim.SetTrigger ("Landed");	
+		} else if(!Controller.isGrounded &&  Controller.velocity.y <= 0f ){
+			Debug.Log ("falling");
+			landing = true;
+			anim.SetTrigger ("Falling");
+		} 
+		*/
+
+		if(fire1){
+			anim.SetTrigger ("Shoot");	
+		}
+
+	}
+
 }
