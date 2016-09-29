@@ -152,15 +152,18 @@ public class ThirdPersonMovement : MonoBehaviour {
 
 		}
 
-		if(Controller.velocity.y < 0f){
-			if(!anim.GetCurrentAnimatorStateInfo (0).IsName ("Falling")){
-				anim.SetTrigger ("Falling");	
-			}
 
-		}else if(Controller.velocity.y == 0f){
-			if(anim.GetCurrentAnimatorStateInfo (0).IsName ("Falling")){
-				anim.SetTrigger ("Landed");	
-			}
+		if(!anim.IsInTransition(0)){
+			if(Controller.velocity.y < 0f){
+				if(!anim.GetCurrentAnimatorStateInfo (0).IsName ("Falling") && !IsGrounded()){
+					anim.SetTrigger ("Falling");	
+				}
+
+			}else if(Controller.velocity.y == 0f){
+				if(anim.GetCurrentAnimatorStateInfo (0).IsName ("Falling") && IsGrounded()){
+					anim.SetTrigger ("Landed");	
+				}
+			}	
 		}
 		/*
 		if (Controller.velocity.y == 0f && moveDirection.y < 0f && !anim.IsInTransition (0) && anim.GetCurrentAnimatorStateInfo (0).IsName ("Falling") && landing) {
@@ -179,5 +182,11 @@ public class ThirdPersonMovement : MonoBehaviour {
 		}
 
 	}
-
+	bool IsGrounded(){
+		if(Physics.Raycast(transform.position, -transform.up,Controller.skinWidth + 0.005f)){
+			return true;
+		}else{
+			return false;
+		}
+	}
 }
