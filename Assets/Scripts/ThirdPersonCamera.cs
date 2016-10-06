@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class ThirdPersonCamera : MonoBehaviour {
-	public GameObject position;
+	public Transform target;
 	public GameObject player;
 	public float Smoothness = 1f;
 	public Vector3 direction;
@@ -19,14 +19,10 @@ public class ThirdPersonCamera : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		if(Physics.Raycast(player.transform.position,position.transform.position - player.transform.position,out hit, distance)){
-			targetPosition = hit.point;
-		}else{
-			targetPosition = position.transform.position; 
-		}
 
-		transform.position = Vector3.Lerp(transform.position,targetPosition,Time.deltaTime * Smoothness);
-		transform.rotation = Quaternion.Slerp(transform.rotation,position.transform.rotation,Time.deltaTime * Smoothness);
+		//targetPosition = position.transform.position; 
+		transform.position = Vector3.Lerp(transform.position,target.position,Time.deltaTime * Smoothness);
+		transform.rotation = Quaternion.Slerp(transform.rotation,target.rotation,Time.deltaTime * Smoothness);
 
 	}
 

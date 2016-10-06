@@ -144,7 +144,9 @@ public class ThirdPersonMovement : MonoBehaviour {
 	}
 	void SetAnimatorValues(){
 		
-		anim.SetBool ("Run",vertical > 0f ? true : false );
+		anim.SetBool ("Run",vertical > 0f ? true : horizontal != 0? true : false );
+		anim.SetFloat ("Horizontal", horizontal);
+
 		if (jumping && Controller.isGrounded) {
 			landing = true;
 			anim.ResetTrigger ("Landed");

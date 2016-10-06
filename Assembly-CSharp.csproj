@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\IStats.cs" />
      <Compile Include="Assets\Scripts\LevelCreator\LevelLoader.cs" />
      <Compile Include="Assets\Scripts\LevelCreator\ScenarioButton.cs" />
+     <Compile Include="Assets\Scripts\Player\AnimatorEvents.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />
      <Compile Include="Assets\Scripts\Player\Shooting.cs" />
      <Compile Include="Assets\Scripts\Player\ThirdPersonMovement.cs" />

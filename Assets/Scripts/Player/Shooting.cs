@@ -1,8 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+
+
 public class Shooting : MonoBehaviour {
 	[Header ("Info")]
 	public float damage;
+	public Transform weaponPosition;
+	public Vector3 CrosshairCorrection;
 
 	Ray ray;
 	Vector3 direction;
@@ -30,6 +35,7 @@ public class Shooting : MonoBehaviour {
 	public Text targetName;
 	public Text targetHP;
 
+
 	// Use this for initialization
 	void Start () {
 		ray = new Ray ();
@@ -40,7 +46,7 @@ public class Shooting : MonoBehaviour {
 	void Update () {
 		GetInputs ();
 		Aim ();
-		Shoot ();
+		//Shoot ();
 		UpdateUI();
 	}
 	void GetInputs(){
@@ -56,7 +62,7 @@ public class Shooting : MonoBehaviour {
 		
 		direction = endPoint.transform.position - transform.position ;
 		direction.Normalize ();
-		ray.origin = transform.position;
+		ray.origin = transform.position + CrosshairCorrection;
 		ray.direction = direction;
 
 		if (Physics.Raycast (ray.origin,ray.direction, out hit,100f,mask)) {
@@ -72,15 +78,23 @@ public class Shooting : MonoBehaviour {
 
 	}
 
-	void Shoot(){
-		if(fire1){
+	public void Shoot(){
+		//if(fire1){
+			//StartCoroutine (WaitForShootAnimation ());
 			chargingTime = (int)(chargingTime / chargingThreshold);
-			GameObject bullet = (GameObject)Instantiate (bullets[(int)(Mathf.Clamp(chargingTime,0,bullets.Length-1f))],transform.position + (direction * 2f),transform.rotation);
+			GameObject bullet = (GameObject)Instantiate (bullets[(int)(Mathf.Clamp(chargingTime,0,bullets.Length-1f))],weaponPosition.position,transform.rotation);
 			bullet.GetComponent<Bullet>().StartTravel(direction);	
 			chargingTime = 0f;
-		}
+		//}
 
 	}
+//	IEnumerator WaitForShootAnimation(){
+//		chargingTime = (int)(chargingTime / chargingThreshold);
+//		GameObject bullet = (GameObject)Instantiate (bullets[(int)(Mathf.Clamp(chargingTime,0,bullets.Length-1f))],weaponPosition.position,transform.rotation);
+//		bullet.GetComponent<Bullet>().StartTravel(direction);	
+//		chargingTime = 0f;
+//	
+//	}
 	void ShowTargetStatus(IStats targetStats){
 		targetUI.SetActive(true);
 		targetName.text = targetStats.Name;
