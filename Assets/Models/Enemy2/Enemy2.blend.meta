@@ -1,49 +1,47 @@
 fileFormatVersion: 2
-guid: f8168d318a925e5419e19b4f4413b97d
-timeCreated: 1475766523
+guid: a35a2666e460afe47bd9a427661a23b4
+timeCreated: 1475809514
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
+    100000: Body
     100002: Cube
-    100004: Cylinder
-    100006: Cylinder_001
-    100008: ArmSection1
-    100010: ArmSection2
-    100012: Body
-    100014: ArmSection3
-    400000: //RootNode
+    100004: //RootNode
+    100006: Sphere
+    100008: Face
+    100010: Part1
+    100012: Part2
+    100014: Part3
+    400000: Body
     400002: Cube
-    400004: Cylinder
-    400006: Cylinder_001
-    400008: ArmSection1
-    400010: ArmSection2
-    400012: Body
-    400014: ArmSection3
-    2300000: //RootNode
+    400004: //RootNode
+    400006: Sphere
+    400008: Face
+    400010: Part1
+    400012: Part2
+    400014: Part3
+    2300000: Body
     2300002: Cube
-    2300004: Cylinder
-    2300006: Cylinder_001
-    2300008: ArmSection1
-    2300010: ArmSection2
-    2300012: Body
-    2300014: ArmSection3
-    3300000: //RootNode
+    2300004: Sphere
+    2300006: Face
+    2300008: Part1
+    2300010: Part2
+    2300012: Part3
+    3300000: Body
     3300002: Cube
-    3300004: Cylinder
-    3300006: Cylinder_001
-    3300008: ArmSection1
-    3300010: ArmSection2
-    3300012: Body
-    3300014: ArmSection3
+    3300004: Sphere
+    3300006: Face
+    3300008: Part1
+    3300010: Part2
+    3300012: Part3
     4300000: Cube
-    4300002: Cylinder_001
-    4300004: Cylinder
-    4300006: ArmSection2
-    4300008: ArmSection1
-    4300010: Body
-    4300012: ArmSection3
+    4300002: Sphere
+    4300004: Body
+    4300006: Face
+    4300008: Part3
+    4300010: Part2
+    4300012: Part1
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -86,8 +84,8 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 36
-    normalImportMode: 1
+    normalSmoothAngle: 60
+    normalImportMode: 0
     tangentImportMode: 3
   importAnimation: 1
   copyAvatar: 0

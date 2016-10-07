@@ -1,11 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\ThirdPersonMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Bullet.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player\ThirdPersonMovement.cs" Line="147" Column="70" />
-      <File FileName="Assets\Scripts\Player\Shooting.cs" Line="65" Column="56" />
-      <File FileName="Assets\Scripts\Player\AnimatorEvents.cs" Line="16" Column="21" />
-      <File FileName="Assets\Scripts\ThirdPersonCamera.cs" Line="23" Column="5" />
+      <File FileName="Assets\Scripts\Player\ThirdPersonMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\Shooting.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\AnimatorEvents.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ThirdPersonCamera.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Bullet.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
